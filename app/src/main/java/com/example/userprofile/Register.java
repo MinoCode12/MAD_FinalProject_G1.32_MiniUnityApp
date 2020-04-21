@@ -80,6 +80,7 @@ public class Register extends AppCompatActivity {
 
                       }else {
                           Toast.makeText(Register.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                          progressBar.setVisibility(View.GONE);
 
                       }
                     }
@@ -88,6 +89,11 @@ public class Register extends AppCompatActivity {
         });
 
 
-
+mLoginBtn.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        startActivity(new Intent(getApplicationContext(),Login.class));
+    }
+});
     }
 }
